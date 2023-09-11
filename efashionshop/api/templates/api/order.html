@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>order</title>
+  </head>
+  <body>
+    <h2>Order</h2>
+    <div>
+      <hr />
+      <h4> Customer details</h4>
+      <p>Date: {{order.date}}</p>
+      <p>Address: {{order.address}}</p>
+      <p>Phone number: {{order.phoneNumber}}</p>
+      <hr />
+    </div>
+    <div >
+      <ol>
+        {% for cart in order.cart.all %}
+        <li>
+          <h4>Product details</h4>
+          <p>Product title: <a href="http://localhost:4200/products/{{cart.product.gender}}/detail/{{cart.product.id}}"> {{cart.product.productTitle}}</a></p>
+          <p>Product colour: {{cart.product.colour}}</p>
+          <p>Product quantity: {{cart.quantity}}</p>
+          <p>Product price: {{cart.product.price}}</p>
+        </li>
+        {% endfor %}
+      </ol>
+      <hr />
+      <b>Total price : {{order.price}}</b>
+      <p>Sincerely, Efashion team &#x2728;<p>
+    </div>
+  </body>
+</html>
