@@ -1,5 +1,5 @@
 # API for EfashionAngular
-<img src="./static/explanatory/routes.JPG"> 
+<img src="efashionshop/static/explanatory/routes.JPG"> 
 
 # Skill set
 Django, Python, HTML
