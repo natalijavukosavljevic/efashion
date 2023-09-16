@@ -128,6 +128,8 @@ def getRoutes(request):
 
 
     ]
+   
+    
     context={'routes':routes}
   
     return render(request,'api/home.html', context=context)

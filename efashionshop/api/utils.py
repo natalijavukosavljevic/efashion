@@ -28,9 +28,9 @@ def orderMail(data,customerEmail):
     s.starttls()
         
     # # Authentication
-    s.login("vuknatcol@gmail.com", "xmnlwceyzoipkdnc")
+    s.login("enteryouremail", "password")
     
-    sender = "vuknatcol@gmail.com"
+    sender = "enteryouremail"
     recipient = customerEmail
   
     email = EmailMessage()
@@ -45,13 +45,13 @@ def mailToken(customerMail,customer):
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
     
-    s.login("vuknatcol@gmail.com", "xmnlwceyzoipkdnc")
+    s.login("enteryouremail", "password")
     text="Your security token is  " +customer.generateTemporaryToken() +" \nSincerely, Efashion team."
     message = 'Subject: {}\n\n{}'.format('Requested token', text)
     
 
     
-    s.sendmail("vuknatcol@gmail.com", customerMail, message)
+    s.sendmail("enteryouremail", customerMail, message)
     
     s.quit()
 

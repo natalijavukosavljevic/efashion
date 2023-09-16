@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-h@p3-js)e1$oz@6_@a)b5jhtp)m7lrfv7r+h$+4^6cjt1yy36+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  #True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -102,12 +102,14 @@ SIMPLE_JWT = {
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -177,14 +179,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-#email
-#xmnlwceyzoipkdnc
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_USE_SSL = False
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'vuknatcol@gmail.com'
-# EMAIL_HOST_PASSWORD = 'xmnlwceyzoipkdnc'
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -201,6 +196,7 @@ STATICFILES_DIRS=[
 ]
 
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 #ovo pokrenemo sa ovim python manage.py collectstatic
 #kada u static nesto menjamo moramo python manage.py collectstatic da se promeni u staticfiles
 # i on bundluje sve static fajlove
